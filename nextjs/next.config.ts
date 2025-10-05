@@ -1,6 +1,5 @@
 import type { NextConfig } from 'next';
 import initializeBundleAnalyzer from '@next/bundle-analyzer';
-import { generateRedirects } from './src/lib/redirects';
 
 const withBundleAnalyzer = initializeBundleAnalyzer({
 	enabled: process.env.BUNDLE_ANALYZER_ENABLED === 'true',
@@ -57,11 +56,6 @@ const nextConfig: NextConfig = {
 				],
 			},
 		];
-	},
-	async redirects() {
-		const redirects = await generateRedirects();
-
-		return redirects;
 	},
 };
 
